@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework task 7</title>
+    <style>
+        table {
+            width: 100%;
+            background: #ffecef;
+        }
+        
+        td {
+            border: 2px solid #ff0693;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="table"></table>
+    <script>
+        let row = +prompt('введите количество строк');
+        let column = +prompt('введите количество столбцов');
+        let s = '';
+        for (var i = 1; i <= row; i++) {
+            var tr = document.createElement('tr');
+            for (var j = 1; j <= column; j++) {
+                var td = document.createElement('td');
+                td.innerHTML = ' ячейка ' + i + '.' + j;
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+    </script>
+</body>
+
+</html>
