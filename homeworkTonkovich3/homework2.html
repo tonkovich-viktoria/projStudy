@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework task 2</title>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        let amountDiv = +prompt('введите количество div');
+        let amountImg = +prompt('введите количество картинок (1-11)');
+        let d = '';
+        console.log(amountDiv)
+        for (i = 1; i <= amountDiv; i++) {
+            d += '<div>';
+            for (j = 1; j <= amountImg; j++) {
+                d += `<img src="images/${j}.png">`
+            }
+            d += '</div>';
+        }
+        box.innerHTML = d;
+    </script>
+</body>
+
+</html>

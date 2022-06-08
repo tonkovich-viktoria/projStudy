@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework task 6</title>
+    <style>
+        .row {
+            display: flex;
+            align-items: center;
+        }
+        
+        p {
+            margin-right: 5px;
+        }
+        
+        ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        a {
+            padding: 10px;
+            text-decoration: none;
+        }
+    </style>
+    <style id="styles"></style>
+</head>
+
+<body>
+    <form>
+        <div class="row">
+            <p>Пункты меню</p>
+            <input type="text" id="menuItems" placeholder="Главная, О компании, Новости" value="Главная, О компании, Новости" size="40">
+        </div>
+        <div class="row">
+            <p>Цвет текста</p>
+            <input type="color" id="text" name="text" value="#ffffff">
+        </div>
+        <div class="row">
+            <p>Цвет фона</p>
+            <input type="color" id="background" name="background" value="#bab8f1">
+        </div>
+        <div class="row">
+            <p>Цвет hover</p>
+            <input type="color" id="hover" name="hover" value="#ffa879">
+        </div>
+        <div class="row">
+            <input type="button" onclick="createMenu()" value="Создать меню">
+        </div>
+    </form>
+    <ul id="menu"></ul>
+    <div id="pic"></div>
+    <script>
+        function createMenu() {
+            let menuArr = menuItems.value.split(', ');
+            let m = '';
+            for (let index of menuArr) {
+                m += `<li><a onclick='showImg()' href='#'>${index}</a></li>`;
+            }
+            menu.innerHTML = m;
+            let textColor = text.value;
+            let backgroundColor = background.value;
+            let hoverColor = hover.value;
+
+            let style = `   a {
+            color: ${textColor};
+            background: ${backgroundColor};
+            }
+            a:hover {
+            background: ${hoverColor};
+            }`
+            styles.innerHTML = style;
+        }
+
+        function showImg() {
+            let rand = Math.floor(Math.random() * 10) + 1;
+            pic.innerHTML = `<img src=images/${rand}.png>`
+
+        }
+    </script>
+</body>
+
+</html>

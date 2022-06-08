@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework 1</title>
+</head>
+
+<body>
+    <script>
+        let styles = ["джаз", "блюз"];
+        console.log(styles);
+        styles.push("рок-н-ролл");
+        console.log(styles);
+        let length = styles.length;
+        styles.splice(length - 2, 1, "классика");
+        console.log(styles);
+        let first = styles.shift();
+        console.log(first);
+        console.log(styles);
+        styles.unshift("рэп", "регги");
+        console.log(styles);
+    </script>
+</body>
+
+</html>
