@@ -1,0 +1,71 @@
+@font-face {
+    font-family: Oswald-Regular;
+    src: url(../fonts/Oswald-Regular.ttf);
+}
+
+.card {
+    width: 300px;
+    height: 675px;
+    background: #ffffff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.card-pic {
+    position: relative;
+}
+
+.card-img-action {
+    position: absolute;
+    top: 150px;
+    left: calc(50% - 48.5px);
+}
+
+.card-img-sale {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+}
+
+.card-title {
+    font-family: Oswald-Regular;
+    font-size: 30px;
+    color: #616161;
+    text-align: center;
+    margin: 10px 0 0;
+    line-height: 27px;
+}
+
+.card-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Oswald-Regular;
+    font-size: 30px;
+    color: #242323;
+    padding: 0 40px;
+    margin: 10px 0;
+}
+
+.card-price p {
+    margin: 0;
+}
+
+.old-price {
+    font-size: 19px;
+    color: #868282;
+    text-decoration: line-through;
+}
+
+.img-rating {
+    margin: 0 auto;
+    display: block;
+}
+
+.card-button {
+    border: 0;
+    background: transparent;
+    display: block;
+    margin: 10px auto;
+    padding: 0;
+}
