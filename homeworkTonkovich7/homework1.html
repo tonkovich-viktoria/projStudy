@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 1</title>
+    <style>
+        .row {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .pic {
+            margin-right: 10px;
+        }
+        
+        .pic:last-child {
+            margin: 0;
+        }
+        
+        p {
+            margin: 5px 0 0 0;
+        }
+        
+        #bigImg {
+            text-align: center;
+            position: relative;
+            height: 600px;
+        }
+        
+        #bigImg img {
+            position: absolute;
+            left: calc(50% - 385px);
+        }
+        
+        .desc {
+            position: absolute;
+            bottom: 20px;
+            left: calc(50% - 385px);
+            width: 770px;
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="row" class="row">
+    </div>
+    <div id="bigImg" onclick="hideImg()">
+
+    </div>
+    <script>
+        let images = [{
+                img: "red.jpg",
+                caption: "Костел",
+                desc: "В храме святого Симеона и святой Елены находится полномасштабная копия Туринской Плащаницы.",
+
+            }, {
+                img: "troi.jpg",
+                caption: "Троицкое",
+                desc: "Троицкое предместье — исторический район города Минска, расположенный в северо-восточной части исторического центра на левом берегу реки Свислочь.",
+
+            }, {
+                img: "mir.jpg",
+                caption: "Мир",
+                desc: "Построенный в начале XVI в. магнатом Ю. И. Ильиничем замок стал первым частнособственническим замком на землях Белоруссии",
+
+            }
+
+        ]
+
+        let s = "",
+            p = "";
+        for (i = 0; i < images.length; i++) {
+            s += `<div class="pic">
+            <img src="img/${images[i].img}" width="250px" onclick="showImg(this)" data-desc="${images[i].desc}">
+            <p>${images[i].caption}</p>
+            
+        </div>`
+
+            function showImg(img) {
+                console.log(img.dataset.desc)
+                i += `<img src="${img.src}" width="770px" >
+            <p class="desc">${img.dataset.desc}</p>`
+                document.getElementById("bigImg").innerHTML = i;
+                document.getElementById("bigImg").style.display = "block";
+                let tagP = document.getElementById("bigImg").getElementsByTagName("p");
+                for (const iterator of tagP) {
+                    iterator.style.color = "#6247ad";
+                    iterator.style.fontSize = "18px"
+                }
+            }
+        }
+        document.getElementById("row").innerHTML = s;
+
+        function hideImg() {
+            document.getElementById("bigImg").style.display = "none"
+        }
+    </script>
+</body>
+
+</html>
