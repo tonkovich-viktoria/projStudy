@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework 1 London</title>
+</head>
+
+<body><button onclick="closeWin()" id="buttonClose">close</button>
+    <br>
+    <h1 id="title">London</h1>
+    <p id="desc">description</p>
+    <img id="imgCity" src="london.jpg">
+
+
+    <script>
+        function closeWin() {
+            window.close()
+        }
+        buttonClose.style = `
+        border: 0px;
+    background: #d60000;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+        `
+        title.style = `
+        color: #001d94;
+        `
+        desc.style = `
+        margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #006f72;
+        `
+
+        imgCity.style = `
+        width: 1000px;
+    border-radius: 5px;
+        `
+    </script>
+</body>
+
+</html>

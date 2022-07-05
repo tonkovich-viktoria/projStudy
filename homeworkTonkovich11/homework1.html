@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework 1</title>
+</head>
+
+<body onclick="myEvent(event)">
+    <img src="world.gif">
+    <script>
+        function myEvent(e) {
+            let s = "";
+            s += `
+тип события: ${e.type}
+источник события: ${e.srcElement.tagName}
+координата Х: ${e.clientX}
+координата Y: ${e.clientY}
+
+координата Х1: ${e.pageX}
+координата Y1: ${e.pageY}
+`
+                /*    alert(s); */
+            if (e.pageX >= 980 && e.pageX <= 990 || e.pageY >= 180 && e.pageX <= 190) {
+                window.open('homework1-london.html', null, 'width=1200, height=800px')
+            }
+            if (e.pageX >= 1699 && e.pageX <= 1705 || e.pageY >= 277 && e.pageX <= 282) {
+                window.open('homework1-tokyo.html', null, 'width=1200, height=800px')
+            }
+            if (e.pageX >= 610 && e.pageX <= 620 || e.pageY >= 246 && e.pageX <= 255) {
+                window.open('homework1-newyork.html', null, 'width=1200, height=800px')
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework 2</title>
+</head>
+
+<body>
+
+    <script>
+        let newTable = document.createElement("table");
+        let row = 5,
+            col = 6;
+
+        for (var i = 1; i <= row; i++) {
+            var tr = document.createElement('tr');
+            for (var j = 1; j <= col; j++) {
+                var td = document.createElement('td');
+                td.innerHTML = ' ячейка ' + i + '.' + j;
+                tr.appendChild(td);
+                td.setAttribute('class', 'td');
+            }
+            newTable.appendChild(tr);
+            newTable.setAttribute('id', 'table');
+        }
+        document.body.append(newTable);
+        document.getElementById('table').style.cssText = 'border:2px solid pink;width: 700px;height: 200px;background: #f8f0ff;'
+        let tdClass = document.getElementsByClassName('td');
+        for (const iterator of tdClass) {
+            iterator.style.cssText = "border: 2px solid #ff0693;padding: 5px; background:#ffd5dd; width:100px; height:20px; text-align:center"
+        }
+        setTimeout(function() {
+            let tdTableInner = document.getElementsByTagName('td');
+            for (const td of tdTableInner) {
+                td.innerHTML = ''
+            }
+        }, 2000);
+        setTimeout(function() {
+            let tr = document.getElementsByTagName('tr');
+            for (const tr1 of tr) {
+                tr1.innerHTML = ''
+            }
+        }, 4000)
+        setTimeout(function() {
+            let trTable = document.getElementById('table');
+            trTable.innerHTML = ''
+        }, 6000)
+        setTimeout(() => newTable.remove(), 8000);
+    </script>
+</body>
+
+</html>
